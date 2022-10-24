@@ -11,6 +11,13 @@
   </head>
 
   <body>
-    <%= yield %>
-  </body>
+    <div>
+      <header class="container">
+        <h1><%= link_to "Data-Driven Rails Application", root_path %></h1>
+      </header>
+
+      <%= yield %>
+
+    </div>
+</body>
 </html>
