@@ -1,16 +1,16 @@
-<h2><%= @author.name %></h2>
-<p><%= @author.name %> has written <%= @author.books.count %> books.</p>
-<p>Learn more about <%= @author.name %> </p>
+<div class = "container">
+  <h2><%= @author.name %></h2>
+  <p><%= @author.name %> has written <%= @author.books.count %> books.</p>
+  <p>Learn more about <%= @author.name %> </p>
 
-<h3>Books written by <%= @author.name %></h3>
-<% if @author.books.empty? %>
-  <p>There are no books written by <%= @author.name %></p>
-<% else %>
-  <ul>
-    <% @author.books.each do |book| %>
-    <li> <%= book.title %> </li>
-    <% end %>
-  </ul>
-<% end %>
-
-<p><%= link_to "Home", root_path %></p>
+  <h3>Books written by <%= @author.name %></h3>
+  <% if @author.books.empty? %>
+    <p>There are no books written by <%= @author.name %></p>
+  <% else %>
+    <ul>
+      <% @author.books.each do |book| %>
+      <li> <%= book.title %> </li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
