@@ -5,6 +5,7 @@
   <% @authors.each do |author| %>
   <h2> <%= author.name %> </h2>
   <p><%= author.name %> has written <%= author.books.count %> books.</p>
-  <p>Learn more about <%= author.name %> </p>
+  <p>Learn more about <%= link_to author.name, author %> </p>
   <% end %>
 <% end %>
+
