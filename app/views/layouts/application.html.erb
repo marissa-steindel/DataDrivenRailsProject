@@ -16,21 +16,17 @@
 
   <body>
     <div  class="container">
-      <header>
-        <h1><%= link_to "Data-Driven Rails Application", root_path %></h1>
-        <nav>
-          <ul>
-            <li><%= link_to "Authors", root_path%></li>
-            <li><%= link_to "Books", books_path %></li>
-          </ul>
-        </nav>
-      </header>
 
+      <%= render partial: "layouts/header" %>
+
+      <%= render partial: "layouts/header" %>
+
+    <div  class="container">
       <%= render partial: "books/searchform" %>
 
       <%= yield %>
+    </div>
 
       <%= render partial: "layouts/footer" %>
-    </div>
 </body>
 </html>
