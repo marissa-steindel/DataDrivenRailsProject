@@ -1,9 +1,12 @@
-      <header>
-        <h1><%= link_to "Data-Driven Rails Application", root_path %></h1>
-        <nav>
-          <ul>
-            <li><%= link_to "Authors", root_path%></li>
-            <li><%= link_to "Books", books_path %></li>
-          </ul>
-        </nav>
-      </header>
+      <nav class="navbar-brand text-bg-info p-3">
+        <div class="container-fluid">
+          <h1><%= link_to "Data-Driven Rails Application", root_path %></h1>
+        </div>
+      </nav>
+
+      <nav>
+        <ul class="nav nav-tabs">
+          <li class="nav-link"><%= link_to "Authors", root_path%></li>
+          <li class="nav-link"><%= link_to "Books", books_path %></li>
+        </ul>
+      </nav>

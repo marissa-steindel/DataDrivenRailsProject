@@ -15,15 +15,15 @@
   </head>
 
   <body>
-    <div  class="container">
 
       <%= render partial: "layouts/header" %>
 
+    <div  class="container">
       <%= render partial: "books/searchform" %>
 
       <%= yield %>
+    </div>
 
       <%= render partial: "layouts/footer" %>
-    </div>
 </body>
 </html>
