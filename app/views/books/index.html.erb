@@ -1,2 +1,13 @@
-<h1>Books#index</h1>
-<p>Find me in app/views/books/index.html.erb</p>
+<div class="container" >
+  <h1>All Books</h1>
+
+  <% if @books.empty? %>
+    <p>There are no books.</p>
+  <% else %>
+    <ul>
+      <% @books.each do |book| %>
+        <li> <%= link_to book.title, book_path(book) %> </li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
