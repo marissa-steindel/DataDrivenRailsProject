@@ -18,6 +18,11 @@
     <div  class="container">
       <header>
         <h1><%= link_to "Data-Driven Rails Application", root_path %></h1>
+        <nav>
+          <ul>
+            <li><%= link_to "Books", books_path %></li>
+          </ul>
+        </nav>
       </header>
 
       <%= yield %>
