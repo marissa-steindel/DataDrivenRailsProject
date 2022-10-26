@@ -6,4 +6,5 @@ Rails.application.routes.draw do
       get 'search_results'
     end
   end
+  get 'about', to: "books#about"
 end

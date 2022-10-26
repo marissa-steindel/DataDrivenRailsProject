@@ -10,4 +10,7 @@ class BooksController < ApplicationController
   def search_results
     @books = Book.where( 'title LIKE ?', "%#{params[:query]}%" )
   end
+
+  def about
+  end
 end
