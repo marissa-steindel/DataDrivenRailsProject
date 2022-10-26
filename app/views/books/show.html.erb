@@ -1,4 +1,8 @@
 <div class="container" >
   <h2><%= @book.title %></h2>
-  <p>This book is written by <%= @book.author.name %></p>
+  <p><strong>Author:</strong> <%= @book.author.name %></p>
+  <p><strong>Synopsis:</strong> <%= @book.synopsis %></p>
+  <p><strong>Number of pages:</strong> <%= %></p>
+  <p><strong>Genre:</strong> <%= %></p>
+  <p><strong>Publisher:</strong> <%= %></p>
 </div>
