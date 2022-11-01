@@ -10,9 +10,14 @@ books = CSV.parse(csv_data, headers: true)
 
 # traverse the parsed books CSV file
 books.each do |b|
-  author = Author.find_or_create_by(name: b["Author"])
+  if b["Author"].nil?
+    author_name = Faker::Book.unique.author
+  else
+    author_name = b["Author"].split(", ").reverse.join(" ")
+  end
+  author = Author.find_or_create_by(name: author_name)
   new_book = Book.new(
-    title: b["Title"],
+    title: b["Title"].split(", ").reverse.join(" "),
     genre: b["Genre"],
     pages: b["Height"],
     publisher: b["Publisher"]
