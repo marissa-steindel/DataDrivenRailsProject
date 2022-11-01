@@ -7,9 +7,9 @@
       <h2 class="mb-3"><%= @book.title %></h2>
       <p><strong>Author:</strong> <%= link_to @book.author.name, author_path(@book.author) %></p>
       <p><strong>Synopsis:</strong> <%= @book.synopsis %></p>
-      <p><strong>Number of pages:</strong> <%= %></p>
-      <p><strong>Genre:</strong> <%= %></p>
-      <p><strong>Publisher:</strong> <%= %></p>
+      <p><strong>Number of pages:</strong> <%= @book.pages %></p>
+      <p><strong>Genre:</strong> <%= @book.genre %></p>
+      <p><strong>Publisher:</strong> <%= @book.publisher %></p>
     </div>
   </div>
 </div>
