@@ -1,19 +1,21 @@
-<div class="container" >
-  <h1>All Books - Collection</h1>
+<div class="container columns is-multiline" >
+  <div class="column">
+      <h1>All Books - Collection</h1>
 
-  <% if @books.empty? %>
-    <p>There are no books.</p>
-  <% else %>
-    <ul>
-      <% @books.each do |book| %>
-        <li> <%= link_to book.title, book_path(book) %> by <%= link_to book.author.name, book.author %></li>
+      <% if @books.empty? %>
+        <p>There are no books.</p>
+      <% else %>
+        <ul>
+          <% @books.each do |book| %>
+            <li> <%= link_to book.title, book_path(book) %> by <%= link_to book.author.name, book.author %></li>
+          <% end %>
+        </ul>
       <% end %>
-    </ul>
-  <% end %>
 
-  <nav class="pagination">
-    <p>
-      <%= paginate @books %>
-    </p>
-  </nav>
+      <nav class="pagination">
+        <p>
+          <%= paginate @books %>
+        </p>
+      </nav>
+  </div>
 </div>

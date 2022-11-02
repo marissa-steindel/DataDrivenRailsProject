@@ -1,19 +1,18 @@
-<div class="container" >
-  <h1>Authors - Collection</h1>
-
-  <% if @authors.empty? %>
-  <% else %>
-    <% @authors.each do |author| %>
-      <h2> <%= link_to author.name, author %> </h2>
-      <p><%= author.name %> has written <%= pluralize(author.books.count, "book") %>.</p>
-    <% end %>
-
-      <nav class="pagination">
-        <p>
-          <%= paginate @authors %>
-        </p>
-      </nav>
-
-<% end %>
+<div class="container columns is-multiline" >
+  <div class = "column">
+    <h1>Authors - Collection</h1>
+      <% if @authors.empty? %>
+      <% else %>
+        <% @authors.each do |author| %>
+          <h2> <%= link_to author.name, author %> </h2>
+          <p><%= author.name %> has written <%= pluralize(author.books.count, "book") %>.</p>
+        <% end %>
+        <nav class="pagination">
+          <p>
+            <%= paginate @authors %>
+          </p>
+        </nav>
+      <% end %>
+  </div>
 </div>
 
