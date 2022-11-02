@@ -16,21 +16,22 @@ books.each do |b|
     author_name = b["Author"].split(", ").reverse.join(" ")
   end
   author = Author.find_or_create_by(name: author_name)
-  new_book = Book.new(
+  new_book = Book.create(
     title: b["Title"].split(", ").reverse.join(" "),
     genre: b["Genre"],
     pages: b["Height"],
-    publisher: b["Publisher"]
+    publisher: b["Publisher"],
+    author: author
   )
-  new_book.author = Author.where(:name => author.name).first
+  # new_book.author = Author.where(:name => author.name).first
   # new_book.save
-  unless(new_book.save)
-    new_book.errors.messages.each do |column, errors|
-      errors.each do |error|
-        puts "The #{column} property #{error}."
-      end
-    end
-  end
+  # unless(new_book.save)
+  #   new_book.errors.messages.each do |column, errors|
+  #     errors.each do |error|
+  #       puts "The #{column} property #{error}."
+  #     end
+  #   end
+  # end
 end
 
 # create  books
