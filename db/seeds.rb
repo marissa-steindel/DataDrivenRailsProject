@@ -1,6 +1,13 @@
 require "csv"
 Book.destroy_all
 Author.destroy_all
+Publisher.destroy_all
+Country.destroy_all
+
+# create  publishers
+50.times do
+  publisher = Publisher.create(name: Faker::Book.unique.publisher)
+end
 
 csv_file = Rails.root.join('db/booklist.csv')
 csv_data = File.read(csv_file)
@@ -16,11 +23,13 @@ books.each do |b|
     author_name = b["Author"].split(", ").reverse.join(" ")
   end
   author = Author.find_or_create_by(name: author_name)
+  publisher = Publisher.find_or_create_by(name: b["Publisher"])
   new_book = Book.create(
     title: b["Title"].split(", ").reverse.join(" "),
+    synopsis: Faker::Lorem.paragraph(sentence_count: 6),
     genre: b["Genre"],
     pages: b["Height"],
-    publisher: b["Publisher"],
+    # publisher: publisher,
     author: author
   )
   # new_book.author = Author.where(:name => author.name).first
